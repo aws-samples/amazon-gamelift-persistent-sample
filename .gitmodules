@@ -1,0 +1,3 @@
+[submodule "Assets/MLAPI"]
+	path = Assets/MLAPI
+	url = https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git
