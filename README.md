@@ -3,17 +3,32 @@
 
 This sample includes how to implement persistent game server based on Amazon GameLift.
 
+This sample game includes 2 World Server Fleets for Persistent Game service.
+
+* First Game World
+
+![Game Client1](./demo-1.png)
+
+* Second Game World (Boss Included!)
+
+![Game Client2](./demo-2.png)
+
   - Provides GameLift sample for Unity
   - Implement scalable architecture for MMO like persistent game servers.
   - Include Latest best practices for GameLift Architecture.
 
 # GameLift Architecture Features
 
+![Architecture](./architecture.png)
+
   - Design multiple queues and fleets for each world servers. (Scalable!)
   - Implement poll-based patterns for matching scalable users.
 
-### Todos
+# Workshop
+ - EN : 
+ - KO : 
 
+### Todos
  - Add other modules (Login, Game Result Handling)
  - Add large match rules
  - Design Workshop
