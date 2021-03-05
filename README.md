@@ -3,6 +3,9 @@
 
 This sample includes how to implement persistent game server based on Amazon GameLift.
 
+Sample game of this workshop is AgarIO which is famous Massive Multiplayer Online Action Game.     
+About the game, You can find detail information in here (https://en.wikipedia.org/wiki/Agar.io).
+
 This sample game includes 2 World Server Fleets for Persistent Game service.
 
 * First Game World
