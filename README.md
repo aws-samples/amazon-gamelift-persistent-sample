@@ -20,6 +20,10 @@ This sample game includes 2 World Server Fleets for Persistent Game service.
   - Implement scalable architecture for MMO like persistent game servers.
   - Include Latest best practices for GameLift Architecture.
 
+* How to Run
+Open Game Client and run with API Gateway url.
+You can refer how to do in our [Workshop materials](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/en/)
+
 # GameLift Architecture Features
 
 ![Architecture](./architecture.png)
@@ -28,13 +32,13 @@ This sample game includes 2 World Server Fleets for Persistent Game service.
   - Implement poll-based patterns for matching scalable users.
 
 # Workshop
- - EN : 
- - KO : 
+ - EN : [Workshop(English)](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/en/)
+ - KO : [Workshop(Korean)](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/ko/)
 
 ### Todos
  - Add other modules (Login, Game Result Handling)
- - Add large match rules
- - Design Workshop
+ - Including Analytics
+ - Add Test Tools
 
 ### Installation
 
@@ -50,13 +54,13 @@ This sample game includes 2 World Server Fleets for Persistent Game service.
  You are able to follow one of following guide links to install MLAPI.     
  (1) [MLAPI Installation](https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi/blob/master/docs/_docs/getting-started/installation.md)
 
- (2) [Workshop Material]()
+ (2) [Workshop Material](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/en/)
  
  - Install GameLift SDK
  You should Install GameLift SDK from our [official homepage](https://aws.amazon.com/gamelift/getting-started/?nc1=h_ls).
  And It should be included under "Assets" folder.    
 
- This information is also included in our [Workshop Material]()
+ This information is also included in our [Workshop Material](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/en/)
 
  - Install Through Unity Package
  You are able to run Unity Package to import tested source code. It will be easiest way to import working source codes.
