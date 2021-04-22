@@ -35,6 +35,9 @@ You can refer how to do in our [Workshop materials](http://gamelift-persistent-w
  - EN : [Workshop(English)](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/en/)
  - KO : [Workshop(Korean)](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/ko/)
 
+# Demo Video
+ - Video : [Link](https://gamelift-persistent-workshop.s3.ap-northeast-2.amazonaws.com/GameLift-MMO.mp4)
+
 ### Todos
  - Add other modules (Login, Game Result Handling)
  - Including Analytics
@@ -52,7 +55,7 @@ You can refer how to do in our [Workshop materials](http://gamelift-persistent-w
  As this library joins the Unity ecosystem, this project includes MLAPI as its Networking Library. ([Official Blog](https://blogs.unity3d.com/2020/12/03/accelerating-unitys-new-gameobjects-multiplayer-networking-framework/?_ga=2.256478095.584731899.1613809160-1332364721.1600864695))
  In order to run this sample, you need to import MLAPI source code / DLL in this repository.
 
-* Please Note : MLAPI is continuously updating for next generation of Unity Network Engine. The workshop will be updated continuously, but MLAPI compatibility issues may arise. If you are interested in using this sample code directly, I strongly recommand you to check the latest update of MLAPI.
+* Please Note : MLAPI is continuously updated for next generation of Unity Network Engine. The workshop will be updated continuously, but MLAPI compatibility issues may arise. If you are interested in using this sample code directly, I strongly recommand you to check the latest update of MLAPI.
 
  You are able to follow one of following guide links to install MLAPI.     
  (1) [MLAPI Installation](https://mp-docs.dl.it.unity3d.com/docs/getting-started/about-mlapi)
@@ -66,7 +69,7 @@ You can refer how to do in our [Workshop materials](http://gamelift-persistent-w
  This information is also included in our [Workshop Material](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/en/)
 
  - Install Through Unity Package
- You are able to run Unity Package to import tested source code. It will be easiest way to import working source codes.
+ You are able to run Unity Package to import tested source code. It will be the easiest way to import working source codes.
  Before you import the package, you need to [install MLAPI first](https://mp-docs.dl.it.unity3d.com/docs/migration/install).
 
 
