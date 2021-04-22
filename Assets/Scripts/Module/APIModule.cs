@@ -1,25 +1,11 @@
-﻿/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * SPDX-License-Identifier: MIT-0
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this
- * software and associated documentation files (the "Software"), to deal in the Software
- * without restriction, including without limitation the rights to use, copy, modify,
- * merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
- * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
- * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
- * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
- * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 public class APIModule
 {
-    private string API_URL = "https://0sos1lsc4c.execute-api.ap-northeast-2.amazonaws.com/prod/";
+    private string API_URL = "https://hkillbijfk.execute-api.ap-northeast-1.amazonaws.com/prod";
+        //"https://hkillbijfk.execute-api.ap-northeast-1.amazonaws.com/prod/";
+        //"https://0sos1lsc4c.execute-api.ap-northeast-2.amazonaws.com/prod/";
+        //"https://4g7b0oce32.execute-api.us-east-1.amazonaws.com/prod/";
 
     public class MatchmakingRequest
     {
@@ -105,11 +91,11 @@ public class APIModule
 
     public string GetMatchRequestAPI()
     {
-        return API_URL + "matchrequest";
+        return API_URL.EndsWith("/") ? API_URL + "matchrequest" : API_URL + "/matchrequest";
     }
 
     public string GetMatchStatusAPI()
     {
-        return API_URL + "matchstatus";
+        return API_URL.EndsWith("/") ? API_URL + "matchstatus" : API_URL + "/matchstatus";
     }
 }
