@@ -227,7 +227,6 @@ public class ClientModule : MonoBehaviour
         LogModule.WriteToLogFile("[ClientModule] Sign In Process");
         PlayerId = inputName;
 
-#if UNITY_EDITOR
         if (LocalTest)
         {
             Debug.Log("Local Test Sign In");
@@ -235,6 +234,7 @@ public class ClientModule : MonoBehaviour
             this.ClientConnection.Addess = "127.0.0.1";
             this.ClientConnection.Port = 7777;
             this.ClientConnection.PlayerSessionId = "Player!";
+            this.ClientConnection.WorldId = "Map001";
             DisconnectToServer();
             SceneManager.LoadScene(this.ClientConnection.WorldId);
         }
@@ -242,9 +242,6 @@ public class ClientModule : MonoBehaviour
         {
             MoveToWorld("Map001");
         }
-#else
-        MoveToWorld("Map001");
-#endif
     }
 
     public bool SignUp(string inputName, string inputPassword)
@@ -269,20 +266,20 @@ public class ClientModule : MonoBehaviour
     public void ConnectToServer()
     {
         LogModule.WriteToLogFile("[ClientModule] Connect To Server. IP=" + ClientConnection.Addess + ", Port=" + ClientConnection.Port);
-        NetworkingManager.Singleton.GetComponent<UnetTransport>().ConnectAddress = ClientConnection.Addess;
-        NetworkingManager.Singleton.GetComponent<UnetTransport>().ConnectPort = ClientConnection.Port;
-        NetworkingManager.Singleton.NetworkConfig.ConnectionApproval = true;
-        NetworkingManager.Singleton.NetworkConfig.ConnectionData = System.Text.Encoding.UTF8.GetBytes(this.ClientConnection.PlayerSessionId);
-        LogModule.WriteToLogFile("[ClientModule] ConnectionData=" + NetworkingManager.Singleton.NetworkConfig.ConnectionData);
-        NetworkingManager.Singleton.StartClient();
+        NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = ClientConnection.Addess;
+        NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectPort = ClientConnection.Port;
+        NetworkManager.Singleton.NetworkConfig.ConnectionApproval = true;
+        NetworkManager.Singleton.NetworkConfig.ConnectionData = System.Text.Encoding.UTF8.GetBytes(this.ClientConnection.PlayerSessionId);
+        LogModule.WriteToLogFile("[ClientModule] ConnectionData=" + NetworkManager.Singleton.NetworkConfig.ConnectionData);
+        NetworkManager.Singleton.StartClient();
     }
 
     public void DisconnectToServer()
     {
-        if (NetworkingManager.Singleton.IsConnectedClient)
+        if (NetworkManager.Singleton.IsConnectedClient)
         {
             LogModule.WriteToLogFile("[ClientModule] Disconnect CLient");
-            NetworkingManager.Singleton.StopClient();
+            NetworkManager.Singleton.StopClient();
         }
     }
 

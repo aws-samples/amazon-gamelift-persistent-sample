@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public class ServerModule : NetworkedBehaviour
+public class ServerModule : NetworkBehaviour
 {
     public static ServerModule Singleton { get; protected set; }
     public GameObject FoodPrefab;
@@ -33,23 +33,20 @@ public class ServerModule : NetworkedBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NetworkingManager.Singleton.NetworkConfig.ConnectionApproval = true;
-        NetworkingManager.Singleton.OnServerStarted += OnServerStarted;
-        NetworkingManager.Singleton.OnClientConnectedCallback += OnClientConnected;
-        NetworkingManager.Singleton.OnClientDisconnectCallback += OnClientDisconnect;
-        NetworkingManager.Singleton.ConnectionApprovalCallback += OnConnectionApproved;
+        NetworkManager.Singleton.NetworkConfig.ConnectionApproval = true;
+        NetworkManager.Singleton.OnServerStarted += OnServerStarted;
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+        NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnect;
+        NetworkManager.Singleton.ConnectionApprovalCallback += OnConnectionApproved;
 
-#if UNITY_EDITOR
-
-#else
         if (Application.isBatchMode)
         {
             string activeSceneName = SceneManager.GetActiveScene().name;
             if (activeSceneName == "Map001")
             {
                 //Connect to server from Client
-                NetworkingManager.Singleton.GetComponent<UnetTransport>().ConnectAddress = "0.0.0.0";
-                NetworkingManager.Singleton.GetComponent<UnetTransport>().ServerListenPort = 7777;
+                NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "0.0.0.0";
+                NetworkManager.Singleton.GetComponent<UNetTransport>().ServerListenPort = 7777;
 
                 const int port = 7777;
                 LogModule.WriteToLogFile("[ServerModule] Server Module Start at Port :7777 ");
@@ -57,21 +54,21 @@ public class ServerModule : NetworkedBehaviour
                 // Only run on Server mode
                 if (LocalTest)
                 {
-                    NetworkingManager.Singleton.StartServer();
+                    NetworkManager.Singleton.StartServer();
                 }
                 else
                 {
                     if (GameLift.GameLiftStart(port))
                     {
-                        NetworkingManager.Singleton.StartServer();
+                        NetworkManager.Singleton.StartServer();
                     }
                 }
             }
             else if (activeSceneName == "Map002")
             {
                 //Connect to server from Client
-                NetworkingManager.Singleton.GetComponent<UnetTransport>().ConnectAddress = "0.0.0.0";
-                NetworkingManager.Singleton.GetComponent<UnetTransport>().ServerListenPort = 8888;
+                NetworkManager.Singleton.GetComponent<UNetTransport>().ConnectAddress = "0.0.0.0";
+                NetworkManager.Singleton.GetComponent<UNetTransport>().ServerListenPort = 8888;
 
                 const int port = 8888;
                 LogModule.WriteToLogFile("[ServerModule] Server Module Start at Port :8888 ");
@@ -79,18 +76,17 @@ public class ServerModule : NetworkedBehaviour
                 // Only run on Server mode
                 if (LocalTest)
                 {
-                    NetworkingManager.Singleton.StartServer();
+                    NetworkManager.Singleton.StartServer();
                 }
                 else
                 {
                     if (GameLift.GameLiftStart(port))
                     {
-                        NetworkingManager.Singleton.StartServer();
+                        NetworkManager.Singleton.StartServer();
                     }
                 }
             }
         }
-#endif
     }
 
     // Update is called once per frame
@@ -138,7 +134,7 @@ public class ServerModule : NetworkedBehaviour
         }
     }
 
-    private void OnConnectionApproved(byte[] connectionData, ulong clientId, MLAPI.NetworkingManager.ConnectionApprovedDelegate callback)
+    private void OnConnectionApproved(byte[] connectionData, ulong clientId, MLAPI.NetworkManager.ConnectionApprovedDelegate callback)
     {
         LogModule.WriteToLogFile("[ServerModule] On Connection Approved");
 
@@ -185,8 +181,8 @@ public class ServerModule : NetworkedBehaviour
     {
         while (true)
         {
-            int playerCount = NetworkingManager.Singleton.ConnectedClients.Count;
-            int foodCount = SpawnManager.SpawnedObjectsList.Count;
+            int playerCount = NetworkManager.Singleton.ConnectedClients.Count;
+            int foodCount = NetworkSpawnManager.SpawnedObjectsList.Count;
             //Debug.Log("PlayerCount - " + playerCount + ", Food Count - " + foodCount);
             if (foodCount < 10 || playerCount > foodCount / 2)
             {
@@ -200,7 +196,7 @@ public class ServerModule : NetworkedBehaviour
                 //Implement Custom Prefab Spawning
                 GameObject foodObj = Instantiate(FoodPrefab, pos, Quaternion.identity);
                 //Spawn Food Management
-                foodObj.GetComponent<NetworkedObject>().Spawn();
+                foodObj.GetComponent<NetworkObject>().Spawn();
             }
             yield return new WaitForSeconds(5.0f);
         }
@@ -217,7 +213,7 @@ public class ServerModule : NetworkedBehaviour
         //Implement Custom Prefab Spawning
         GameObject bossObj = Instantiate(BossPrefab, pos, Quaternion.identity);
         //Spawn Food Management
-        bossObj.GetComponent<NetworkedObject>().Spawn();
+        bossObj.GetComponent<NetworkObject>().Spawn();
 
         yield return new WaitForSeconds(1.0f);
     }

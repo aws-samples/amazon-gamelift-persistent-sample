@@ -2,7 +2,8 @@
 
 public class APIModule
 {
-    private string API_URL = "https://hkillbijfk.execute-api.ap-northeast-1.amazonaws.com/prod";
+    private string API_URL = "https://bhr9wh1v8j.execute-api.ap-northeast-2.amazonaws.com/prod";
+        //"https://hkillbijfk.execute-api.ap-northeast-1.amazonaws.com/prod";
         //"https://hkillbijfk.execute-api.ap-northeast-1.amazonaws.com/prod/";
         //"https://0sos1lsc4c.execute-api.ap-northeast-2.amazonaws.com/prod/";
         //"https://4g7b0oce32.execute-api.us-east-1.amazonaws.com/prod/";
