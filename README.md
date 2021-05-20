@@ -22,7 +22,7 @@ This sample game includes 2 World Server Fleets for Persistent Game service.
 
 * How to Run
 Open Game Client and run with API Gateway url.
-You can refer how to do in our [Workshop materials](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/en/)
+You can refer how to do in our [Workshop materials](https://gamelift-persistent-workshop.workshop.aws/)
 
 # GameLift Architecture Features
 
@@ -32,8 +32,8 @@ You can refer how to do in our [Workshop materials](http://gamelift-persistent-w
   - Implement poll-based patterns for matching scalable users.
 
 # Workshop
- - EN : [Workshop(English)](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/en/)
- - KO : [Workshop(Korean)](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/ko/)
+ - EN : [Workshop(English)](https://gamelift-persistent-workshop.workshop.aws/)
+ - KO : [Workshop(Korean)](https://gamelift-persistent-workshop.workshop.aws/ko/)
 
 # Demo Video
  - Video : [Link](https://gamelift-persistent-workshop.s3.ap-northeast-2.amazonaws.com/GameLift-MMO.mp4)
@@ -47,7 +47,7 @@ You can refer how to do in our [Workshop materials](http://gamelift-persistent-w
 
  - Clone this Repository 
  To start this repository, you can Run this command for this repository to clone.
- Or you are able to follow Instructions from our [Workshop Material]()
+ Or you are able to follow Instructions from our [Workshop Material](https://gamelift-persistent-workshop.workshop.aws/)
 
  - Install Unity MLAPI
 
@@ -60,13 +60,13 @@ You can refer how to do in our [Workshop materials](http://gamelift-persistent-w
  You are able to follow one of following guide links to install MLAPI.     
  (1) [MLAPI Installation](https://mp-docs.dl.it.unity3d.com/docs/getting-started/about-mlapi)
 
- (2) [Workshop Material](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/en/)
+ (2) [Workshop Material](https://gamelift-persistent-workshop.workshop.aws/)
  
  - Install GameLift SDK
  You should Install GameLift SDK from our [official homepage](https://aws.amazon.com/gamelift/getting-started/?nc1=h_ls).
  And It should be included under "Assets" folder.    
 
- This information is also included in our [Workshop Material](http://gamelift-persistent-workshop.s3-website.ap-northeast-2.amazonaws.com/en/)
+ This information is also included in our [Workshop Material](https://gamelift-persistent-workshop.workshop.aws/)
 
  - Install Through Unity Package
  You are able to run Unity Package to import tested source code. It will be the easiest way to import working source codes.
